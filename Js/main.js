@@ -1,5 +1,5 @@
 var bookmarkName = document.getElementById("bookmarkName");
-var bookmarUrl = document.getElementById("bookmarURL");
+var bookmarkUrl = document.getElementById("bookmarURL");  // Typo fix here
 var AllInput = [];
 
 window.onload = function() {
@@ -10,38 +10,36 @@ window.onload = function() {
 };
 
 function addFun() {
-    
     if (validName() && validUrl()) {
-        if (isBookmarkNameDuplicate(bookmarkName.value)) {
+        // Fix: Call the correct function BookmarkNameExist instead of isBookmarkNameDuplicate
+        if (BookmarkNameExist(bookmarkName.value)) {
             alert("This bookmark name already exists. Please use a different name.");
             return; 
         }
 
         var bookmark = {
             name: bookmarkName.value,
-            Url: bookmarUrl.value,
+            Url: bookmarkUrl.value,
         };
         AllInput.push(bookmark);
         console.log(AllInput);
         ClearInput();
         display();
 
-       
         localStorage.setItem("bookmarks", JSON.stringify(AllInput));
     } else {
         alert("Please provide a valid bookmark name and URL.");
     }
 }
 
-
 function ClearInput() {
     bookmarkName.value = "";
-    bookmarUrl.value = "";
+    bookmarkUrl.value = "";
 }
 
 function display() {
     var cartona = "";
-    for (i = 0; i < AllInput.length; i++) {
+    for (let i = 0; i < AllInput.length; i++) {
         cartona += ` <tr>
             <td>${i + 1}</td>
             <td>${AllInput[i].name}</td>
@@ -59,15 +57,13 @@ function display() {
 function deletContent(index) {
     AllInput.splice(index, 1);
     display();
-
-    
     localStorage.setItem("bookmarks", JSON.stringify(AllInput));
 }
 
-//Function for valid URL 
+// Function for valid URL 
 function validUrl() {
     var regex = /^(https?:\/\/)?([a-z0-9-]+\.)+[a-z0-9]{2,6}(\:[0-9]+)?(\/[a-z0-9-._~%]*)*(\?[a-z0-9-._~%&=]*)?(\#[a-z0-9-._~%]*)?$/i;
-    return regex.test(bookmarUrl.value);
+    return regex.test(bookmarkUrl.value);
 }
 
 function VisitUrl(web) {
@@ -75,10 +71,7 @@ function VisitUrl(web) {
     location.href = url;  
 }
 
-
-
 // Function for valid name
-
 function validName() {
     if (bookmarkName.value.trim() === "") {
         alert("Bookmark name cannot be empty.");
@@ -98,6 +91,7 @@ function validName() {
 
     return true;
 }
+
 // Function to check if the bookmark name already exists
 function BookmarkNameExist(name) {
     for (var i = 0; i < AllInput.length; i++) {
