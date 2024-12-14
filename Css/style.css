@@ -1,0 +1,53 @@
+body{
+    background-color: #f7ecde;
+}
+
+
+
+
+
+h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    color: #352e28;
+}
+
+
+h1::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 25%;
+    bottom: 10px;
+    left: 200px;
+    background-color: #fec260;
+    z-index: -1;
+    transition:all .5s;
+   
+}
+
+h1:hover::before{
+    height: 50%;
+
+}
+
+.doted-box{
+    border-width: 2px 0 2px 0 ;
+    border-style: dotted;
+    border-color: #352e28;
+
+}
+
+
+.decoration-box{
+    margin-top: 70px;
+    font-family: "Righteous", cursive;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-submit{
+background-color: #d1512d;
+    
+}

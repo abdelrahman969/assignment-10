@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <!-- bootstrab -->
+    <link rel="stylesheet" href="./Css/bootstrap.min.css">
+    <!-- steyle css -->
+    <link rel="stylesheet" href="./Css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div class="container py-5 decoration">
+        <div class="text-center pb-5">
+            <h1 class="position-relative z-3">Bookmarker</h1>
+        </div>
+
+
+        <div class="doted-box pb-5">
+            <h2 class="decoration-box text-center ">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+
+
+
+            <div class="pb-5 fw-bold">
+                <label for="bookmarkName" class="pb-2">
+                    <i class="fa-solid fa-book pe-2"></i>
+                    <span>Site Name</span>
+                </label>
+             <input type="text" id="bookmarkName" class="form-control" placeholder="Bookmark Name">
+            </div>
+
+            <div class="pb-5 fw-bold">
+                <label for="bookmarURL" class="pb-2">
+                    <i class="fa-solid fa-link"></i>
+                    <span>Site URL</span>
+                </label>
+             <input type="url" id="bookmarURL" class="form-control" placeholder="Website URL">
+            </div>
+
+
+
+            <button class="btn-submit btn btn-warning px-5 d-flex m-auto " onclick="addFun()">Submit</button>
+
+
+
+        </div>
+
+       <table class="table mt-4 text-center bg-light">
+        <thead>
+            <tr>
+                <th class="text-capitalizes">
+                    index
+                </th>
+
+                <th class="text-capitalizes">
+                    Website Name 
+                </th> 
+
+                <th class="text-capitalizes">
+                    Visit 
+                </th>  
+
+                <th class="text-capitalizes">
+                    Delete
+                </th>
+            </tr>
+
+        </thead>
+
+
+        <tbody id="tableContent">
+           
+        </tbody>
+       </table>
+
+       
+
+    </div>
+
+    <script src="./Js/bootstrap.bundle.min.js"></script>
+    <script src="./Js/main.js"></script>
+</body>
+
+</html>
